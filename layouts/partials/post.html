@@ -1,0 +1,30 @@
+<article class="post u-cf">
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="post-title"><a href="{{.Permalink}}">{{ .Title}}</a></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            {{ .Content }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <div class="post-meta-info">
+                Publicado em
+                {{ if .Site.Params.strings.date_format }}
+                    {{ .Date.Format .Site.Params.strings.date_format }}
+                {{ else }}
+                    {{ .Date.Format "2006-01-02" }}
+                {{ end }}
+                <span class="post-meta-info-taxonomy">
+                    na categoria:
+                        {{ range $i, $e := .Params.categories }}{{ if $i }}, {{ end }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    utilizando as tags:
+                        {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                </span>
+            </div>
+        </div>
+    </div>
+</article>

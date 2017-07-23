@@ -1,0 +1,12 @@
+name = "Não Importa"
+license = "MIT"
+licenselink = "http://fabioluciano.mit-license.org/"
+description = "A hugo theme "
+homepage = "https://github.com/fabioluciano"
+tags = ["blog", "category"]
+features = ["blog", "technical", "personal"]
+min_version = 0.1
+
+[author]
+  name = "Fábio Luciano"
+  homepage = "https://github.com/fabioluciano"
