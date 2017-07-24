@@ -5,26 +5,18 @@
     <article class="post-list">
         <div class="row">
             <div class="twelve columns">
-                <h1>Lista de artigos</h1>
+                <h1>Lista de menções</h1>
             </div>
         </div>
 
         <div class="article-list">
-        {{ range .Data.Pages.GroupByDate "2006" }}
+        {{ range .Data.Pages.GroupByParam "author" }}
         <div class="article-list-group">
           <h2 class="article-list-grouper">{{ .Key }}</h2>
           {{ range .Pages }}
             <div class="row article-list-item">
                 <div class="ten columns">
-                    <a href="{{.Permalink}}">{{ .Title }}</a>
-                </div>
-                <div class="two columns">
-                <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                {{ if .Site.Params.strings.date_format }}
-                    {{ .Date.Format .Site.Params.strings.date_format }}
-                {{ else }}
-                    {{ .Date.Format "02/01/2006" }}
-                {{ end }}
+                    <a href="{{.Permalink}}">{{ .Content | truncate 100 }}...</a>
                 </div>
             </div>
             {{ end }}

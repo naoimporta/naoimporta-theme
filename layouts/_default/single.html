@@ -3,9 +3,7 @@
   {{ if eq .Type "artigo" }}
     <div class="container">
         <div class="row">
-            <div class="post-content">
-                {{ partial "post.html" . }}
-            </div>
+            {{ partial "artigo.html" . }}
         </div>
     </div>
   {{ else if eq .Type "mencao" }}
@@ -28,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="page-content">
-                    {{ partial "project.html" . }}
+                    {{ partial "page.html" . }}
                 </div>
             </div>
         </div>

@@ -1,0 +1,31 @@
+<article class="post u-cf">
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="post-title"><a href="{{.Permalink}}">{{ .Title}}</a></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <div class="post-meta-info">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                {{ if .Site.Params.strings.date_format }}
+                    {{ .Date.Format .Site.Params.strings.date_format }}
+                {{ else }}
+                    {{ .Date.Format "02/01/2006" }}
+                {{ end }}
+                <span class="post-meta-info-taxonomy">
+                    | <i class="fa fa-folder-o" aria-hidden="true"></i>
+                        {{ range $i, $e := .Params.categories }}{{ if $i }}, {{ end }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    | <i class="fa fa-tag" aria-hidden="true"></i>
+                        {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}
+<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="post-content row">
+        <div class="twelve columns">
+            {{ .Content }}
+        </div>
+    </div>
+</article>

@@ -1,1 +1,12 @@
-{{ partial "post.html" . }}
+<article class="post u-cf">
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="page-title"><a href="{{.Permalink}}">{{ .Title}}</a></h1>
+        </div>
+    </div>
+    <div class="post-content row">
+        <div class="twelve columns">
+            {{ .Content }}
+        </div>
+    </div>
+</article>
