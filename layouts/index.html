@@ -1,21 +1,10 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
-<!-- 
-<div class="container">
-    <div class="row">
-        <div class="post-list">
-        {{ range where .Data.Pages "Type" "mencao" }}
-            {{ partial "mencao.html" . }}
-        {{ end }}
-        </div>
-    </div>
-</div> -->
 
 <div class="container">
     <div class="row">
         <div class="post-list">
-        {{ $paginator := .Paginate (where .Data.Pages "Type" "artigo") }}
-        {{ range $paginator.Pages }}
+        {{ range (.Paginate ( where site.RegularPages "Section" "artigo")).Pages }}
             {{ partial "artigo.html" . }}
         {{ end }}
         </div>

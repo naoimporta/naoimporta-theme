@@ -248,20 +248,12 @@ footer {
 
 .highlight {
     font-family: monospace;
-    color: white;
     font-size: 90%;
     border-radius: 5px;
-
 }
-
-.highlight > pre {
-    padding-left: .5em;
-    padding-top: .7em;
-    padding-bottom: .7em;
+pre {
+    background-color: transparent !important;
 }
-
-
-.article-list { }
 
 .article-list .article-list-group {
   margin: 0.5em auto;
